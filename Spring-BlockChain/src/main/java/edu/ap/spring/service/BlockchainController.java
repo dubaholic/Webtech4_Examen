@@ -25,8 +25,7 @@ public class BlockchainController {
 	   public String balance( Model model) {
 		Wallet walletA;
 		walletA.generateKeyPair();
-		
-		 model.addAttribute("wallet", walletA.getBalance());
+		model.addAttribute("wallet", walletA.getBalance());
 		return "balance";
 	   }
 	
@@ -37,10 +36,9 @@ public class BlockchainController {
 	
 	@PostMapping("/transaction")
 	   //worden volgende waarde opgehaald uit dit form
-	   public String setGrade(@RequestParam("receiver") PublicKey receiver,
-	                          @RequestParam("value") float value) {
-		  //vervolgens worden al deze waarde opgeslagen in de repository als een nieuw grade object
-			wallet.sendFunds(receiver, value);
+	   public Transaction setTransaction(@RequestParam("sender") Transaction transaction) {
+		wallet.sendFunds(transaction.getRecipient(), transaction.getValue());
+
 	      // daarna geredirect naar de list methode
 	      return "redirect:/";
 	   }
