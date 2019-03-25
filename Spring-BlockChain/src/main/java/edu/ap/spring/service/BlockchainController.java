@@ -20,7 +20,7 @@ public class BlockchainController {
 	private Block block;
 	private BlockChain blockChain;
 	
-	@RequestMapping("/balance/walletA")
+	@RequestMapping(value = "/balance/walletA")
 	   public String balance( Model model) {
 		Wallet walletA = null;
 		walletA.generateKeyPair();
@@ -28,16 +28,16 @@ public class BlockchainController {
 		return "balance";
 	   }
 	
-	@RequestMapping("/transaction")
+	@RequestMapping(value = "/transaction")
 		public String transaction() {
 			return "transaction";
 	}
 	
-	@RequestMapping("/transaction", method= RequestMethod.POST)
+	@RequestMapping(value = "/transaction", method= RequestMethod.POST)
 	   //worden volgende waarde opgehaald uit dit form
 	   public Transaction setTransaction(@RequestParam("sender") Transaction transaction) {
-		wallet.sendFunds(transaction.getRecipient(), transaction.getValue());
-	      return "transaction";
+		
+	      return wallet.sendFunds(transaction.getRecipient(), transaction.getValue());
 	   }
 	
 	
