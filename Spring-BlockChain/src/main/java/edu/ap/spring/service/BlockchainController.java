@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import edu.ap.spring.grade.jpa.Grade;
 import edu.ap.spring.transaction.Transaction;
 
 @Controller
@@ -21,20 +20,20 @@ public class BlockchainController {
 	private Block block;
 	private BlockChain blockChain;
 	
-	@GetMapping("/balance/walletA")
+	@RequestMapping("/balance/walletA")
 	   public String balance( Model model) {
-		Wallet walletA;
+		Wallet walletA = null;
 		walletA.generateKeyPair();
 		model.addAttribute("wallet", walletA.getBalance());
 		return "balance";
 	   }
 	
-	@GetMapping("/transaction")
+	@RequestMapping("/transaction")
 		public String transaction() {
 			return "transaction";
 	}
-	
-	@PostMapping("/transaction")
+	/*
+	@RequestMapping("/transaction")
 	   //worden volgende waarde opgehaald uit dit form
 	   public Transaction setTransaction(@RequestParam("sender") Transaction transaction) {
 		wallet.sendFunds(transaction.getRecipient(), transaction.getValue());
@@ -44,8 +43,8 @@ public class BlockchainController {
 	   }
 	
 	
-	@GetMapping("/")
+	@RequestMapping("/")
 	   public String root() {
 		   return "redirect:/balance/walletA";
-	   }
+	   } */
 }
