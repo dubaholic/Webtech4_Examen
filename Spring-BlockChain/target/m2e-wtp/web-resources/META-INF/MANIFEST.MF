@@ -1,11 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: spring-junit-blockchain
-Implementation-Version: 0.0.1
-Built-By: philippepossemiers
+Implementation-Title: spring-blockchain
+Implementation-Version: 1.0.0
+Built-By: jens rosseau
 Implementation-Vendor-Id: edu.ap.spring
-Build-Jdk: 1.8.0_31
-Implementation-URL: http://projects.spring.io/spring-boot/spring-junit
- -blockchain/
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-blockchain
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
