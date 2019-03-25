@@ -32,19 +32,17 @@ public class BlockchainController {
 		public String transaction() {
 			return "transaction";
 	}
-	/*
-	@RequestMapping("/transaction")
+	
+	@RequestMapping("/transaction", method= RequestMethod.POST)
 	   //worden volgende waarde opgehaald uit dit form
 	   public Transaction setTransaction(@RequestParam("sender") Transaction transaction) {
 		wallet.sendFunds(transaction.getRecipient(), transaction.getValue());
-
-	      // daarna geredirect naar de list methode
-	      return "redirect:/";
+	      return "transaction";
 	   }
 	
 	
 	@RequestMapping("/")
 	   public String root() {
 		   return "redirect:/balance/walletA";
-	   } */
+	   } 
 }
